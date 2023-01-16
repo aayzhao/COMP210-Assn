@@ -26,7 +26,7 @@ public class Part3
         *prevent the print statement from giving numbers, so
         *a3 is declared as an int array for the ascii
         *numbers to be printed.
-         */
+        */
         System.out.println(a3[0]+" "+a3[1]);
     }
 }
