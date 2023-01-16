@@ -5,7 +5,9 @@ public class Part3
     public static void main(String args[])
     {
         short sh;
-        sh = Short.MAX_VALUE; //sh is 32767
+        sh = Short.MAX_VALUE;
+        //sh is 32767, which is stored in MAX_VALUE
+        //from the Short class.
         method2();
     }
 
