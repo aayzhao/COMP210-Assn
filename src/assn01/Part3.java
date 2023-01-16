@@ -17,7 +17,7 @@ public class Part3
 
     public static void method3()
     {
-        char[] a3 = new char[]{'a','z'};
+        int[] a3 = new int[]{'a','z'};
         System.out.println(a3[0]+" "+a3[1]);
     }
 }
