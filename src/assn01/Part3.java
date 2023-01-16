@@ -4,7 +4,8 @@ public class Part3
 {
     public static void main(String args[])
     {
-        short sh = 32767;
+        short sh;
+        sh = Short.MAX_VALUE; //sh is 32767
         method2();
     }
 
