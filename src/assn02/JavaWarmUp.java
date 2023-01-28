@@ -5,7 +5,7 @@ import java.util.HashSet;
 
 public class JavaWarmUp {
     //main method
-    public static void main(String args[]){
+    public static void main(String[] args){
         //create new var for number of items
         int itemCount;
 
