@@ -1,6 +1,7 @@
 package assn02;
 
 import java.util.Scanner;
+import assn02.Product;
 public class JavaWarmUp {
     public static void main(String args[]){
         int itemCount;
