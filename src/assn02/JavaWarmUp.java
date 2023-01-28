@@ -146,7 +146,7 @@ public class JavaWarmUp {
     public static void printList(ProductBatch[] list){
         for(int i = 0; i < list.length; i++){
             System.out.println("Index: " + i);
-            list[i].printProductBatch();
+            list[i].print();
             System.out.println("\n");
         }
     }
