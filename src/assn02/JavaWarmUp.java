@@ -29,11 +29,8 @@ public class JavaWarmUp {
         }
 
         //Print out summary statistics and data for categories
-        printList(prodList);
         printHighest(prodList);
         printLowest(prodList);
-        //System.out.println(calcAvgFee("laptop", prodList));
-        //System.out.println(calcNetProfit("laptop", prodList));
         for(String category : uniqueCategories){
             printStats(category, prodList);
         }
