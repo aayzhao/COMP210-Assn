@@ -10,7 +10,7 @@ public class JavaWarmUp {
         int itemCount;
 
         //create hash set to store categories
-        HashSet<String> cats = new HashSet<String>();
+        HashSet<String> uniqueCategories = new HashSet<String>();
 
         //creating  new scanner object
         Scanner scan = new Scanner(System.in);
@@ -25,12 +25,18 @@ public class JavaWarmUp {
         //add unique product categories to hashset
         for(int i = 0; i < itemCount; i++){
             prodList[i] = new ProductBatch(scan.nextLine().split(" "));
+            uniqueCategories.add(prodList[i].get_category());
         }
 
-        //Print out summary statistics and data
+        //Print out summary statistics and data for categories
         printList(prodList);
         printHighest(prodList);
         printLowest(prodList);
+        //System.out.println(calcAvgFee("laptop", prodList));
+        //System.out.println(calcNetProfit("laptop", prodList));
+        for(String category : uniqueCategories){
+            printStats(category, prodList);
+        }
 
     }
 
@@ -60,8 +66,50 @@ public class JavaWarmUp {
         return index;
     }
 
+    //calculates total quantity of a category produced
+    public static int calcTotalQuantity(String cat, ProductBatch[] list){
+        int total = 0;
+        for(ProductBatch product : list){
+            if(cat.equals(product.get_category())) total = total + product.get_quantity();
+        }
+        return total;
+    }
+
+    //calculates weighted average assembling fee and returns a double (not rounded or truncated)
+    //for a certain category of product
+    public static double calcAvgFee(String cat, ProductBatch[] list){
+        double avg = 0;
+        int total = 0;
+        for(ProductBatch product : list){
+            if(cat.equals(product.get_category())){
+                total = total + product.get_quantity();
+                avg = avg + product.get_fee()* product.get_quantity();
+            }
+        }
+        return avg/(double)total;
+    }
+
+    //calculates the weighted average net profit for a given category of profit
+    //returns a double (not rounded or truncated)
+    public static double calcNetProfit(String cat, ProductBatch[] list){
+        double avg = 0;
+        int totalUnits = 0;
+        double totalTime = 0;
+        int batchCost = 0;
+        for(ProductBatch product : list){
+            if(cat.equals(product.get_category())){
+                totalUnits = totalUnits + product.get_quantity();
+                totalTime = totalTime + product.get_aTime();
+                batchCost = batchCost + product.get_cost();
+                avg = avg + product.get_fee()*product.get_quantity();
+            }
+        }
+        return (avg - 16.0*totalTime - (double)batchCost)/(double)totalUnits;
+    }
+
 
     //void printing methods
+    //print out things to console
 
     //void method for printing the highest assembly fee (that comes latest in the list)
     public static void printHighest(ProductBatch[] list){
@@ -79,6 +127,14 @@ public class JavaWarmUp {
         System.out.println(" When: " + list[index].get_date() + " " + list[index].get_time());
         System.out.println(" Category: " + list[index].get_category());
         System.out.println(" Price: " + list[index].get_fee());
+    }
+
+    //void method for printing the summary statistics for producing a given category of product
+    public static void printStats(String cat, ProductBatch[] list){
+        System.out.println("Statistic of " + cat);
+        System.out.println(" Quantity: " + calcTotalQuantity(cat, list));
+        System.out.println(" Average Assembling Fee: " + Math.round(calcAvgFee(cat, list)*100.0)/100.0);
+        System.out.println(" Average Net Profit: " + Math.round(calcNetProfit(cat, list)*100.0)/100.0);
     }
 
     //void method to print out the list of product batches. Testing purposes only

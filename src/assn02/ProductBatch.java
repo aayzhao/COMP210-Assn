@@ -9,9 +9,9 @@ public class ProductBatch {
     private String _date; //date of assembly
     private String _time; //the assembling time in a 24-hour format
     private String _category; //single-word descriptor of the category of item
-    private Double _fee; //per unit assembly cost
+    private double _fee; //per unit assembly cost
     private int _quantity; //number of product/product count
-    private Double _aTime; //assembly time for this batch of product
+    private double _aTime; //assembly time for this batch of product
     private int _cost; //total cost for producing this batch of product
 
     //no-arg constructor
@@ -21,8 +21,8 @@ public class ProductBatch {
 
     //6-arg constructor
     public ProductBatch(String date, String time, String category,
-                        Double fee, int quantity,
-                        Double aTime, int cost){
+                        double fee, int quantity,
+                        double aTime, int cost){
         _date = date;
         _time = time;
         _category = category;
@@ -39,9 +39,9 @@ public class ProductBatch {
         _date = batch[0];
         _time = batch[1];
         _category = batch[2];
-        _fee = Double.valueOf(batch[3]);
+        _fee = Double.parseDouble(batch[3]);
         _quantity = Integer.parseInt(batch[4]);
-        _aTime = Double.valueOf(batch[5]);
+        _aTime = Double.parseDouble(batch[5]);
         _cost = Integer.parseInt(batch[6]);
     }
 
@@ -55,13 +55,13 @@ public class ProductBatch {
     public String get_category(){
         return _category;
     }
-    public Double get_fee(){
+    public double get_fee(){
         return _fee;
     }
     public int get_quantity(){
         return _quantity;
     }
-    public Double get_aTime(){
+    public double get_aTime(){
         return _aTime;
     }
     public int get_cost(){
