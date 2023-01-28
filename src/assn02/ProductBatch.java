@@ -12,7 +12,7 @@ public class ProductBatch {
     private Double _fee; //per unit assembly cost
     private int _quantity; //number of product/product count
     private Double _aTime; //assembly time for this batch of product
-    private Double _cost; //total cost for producing this batch of product
+    private int _cost; //total cost for producing this batch of product
 
     //no-arg constructor
     public ProductBatch(){
@@ -22,7 +22,7 @@ public class ProductBatch {
     //6-arg constructor
     public ProductBatch(String date, String time, String category,
                         Double fee, int quantity,
-                        Double aTime, Double cost){
+                        Double aTime, int cost){
         _date = date;
         _time = time;
         _category = category;
@@ -42,7 +42,7 @@ public class ProductBatch {
         _fee = Double.valueOf(batch[3]);
         _quantity = Integer.parseInt(batch[4]);
         _aTime = Double.valueOf(batch[5]);
-        _cost = Double.valueOf(batch[6]);
+        _cost = Integer.parseInt(batch[6]);
     }
 
     //accessor methods
@@ -64,7 +64,7 @@ public class ProductBatch {
     public Double get_aTime(){
         return _aTime;
     }
-    public Double get_cost(){
+    public int get_cost(){
         return _cost;
     }
 
