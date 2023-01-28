@@ -10,6 +10,8 @@ public class JavaWarmUp {
         int itemCount;
 
         //create hash set to store categories
+        //not used in assn02 as autograder requires inputs to be in specific order
+        //regardless of creation, quantity, etc.
         HashSet<String> uniqueCategories = new HashSet<String>();
 
         //creating  new scanner object
@@ -135,8 +137,8 @@ public class JavaWarmUp {
     public static void printStats(String cat, ProductBatch[] list){
         System.out.println("Statistic of " + cat);
         System.out.println("\tQuantity: " + calcTotalQuantity(cat, list));
-        System.out.printf("\tAverage Assembling Fee: %.2f\n", Math.round(calcAvgFee(cat, list)*100.0)/100.0);
-        System.out.printf("\tAverage Net Profit: %.2f\n", Math.round(calcNetProfit(cat, list)*100.0)/100.0);
+        System.out.printf("\tAverage Assembling Fee: %.2f\n", calcAvgFee(cat, list));
+        System.out.printf("\tAverage Net Profit: %.2f\n", calcNetProfit(cat, list));
     }
 
     //void method to print out the list of product batches. Testing purposes only
