@@ -1,8 +1,9 @@
 package assn02;
 
 import java.util.Scanner;
-import assn02.Product;
+
 public class JavaWarmUp {
+    //main method
     public static void main(String args[]){
         int itemCount;
 
@@ -12,6 +13,10 @@ public class JavaWarmUp {
 
         System.out.println("Enter entry count:");
         itemCount = scan.nextInt();
+
+        for(int i = 0; i < itemCount; i++){
+            System.out.println("Enter ProductBatch Batch #" + (i + 1));
+        }
 
     }
 
