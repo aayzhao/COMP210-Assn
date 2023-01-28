@@ -1,6 +1,6 @@
 /*This class is mean to store all parameters given in each line of input for products.
 * It contains a no argument constructor and a constructor for all arguments, along with
-* accompanying functions for returning attributes, etc.
+* accompanying accessor functions for returning attributes, etc.
 */
 package assn02;
 
