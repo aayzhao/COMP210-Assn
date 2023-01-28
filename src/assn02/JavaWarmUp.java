@@ -146,13 +146,8 @@ public class JavaWarmUp {
     public static void printList(ProductBatch[] list){
         for(int i = 0; i < list.length; i++){
             System.out.println("Index: " + i);
-            System.out.println("Date: " + list[i].get_date());
-            System.out.println("Time: " + list[i].get_time());
-            System.out.println("Category: " + list[i].get_category());
-            System.out.println("Fee: " + list[i].get_fee());
-            System.out.println("Quantity: " + list[i].get_quantity());
-            System.out.println("Assembly Time: " + list[i].get_aTime());
-            System.out.println("Cost: " + list[i].get_cost()+ "\n");
+            list[i].printProductBatch();
+            System.out.println("\n");
         }
     }
 

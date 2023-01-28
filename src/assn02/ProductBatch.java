@@ -68,5 +68,16 @@ public class ProductBatch {
         return _cost;
     }
 
+    //print method to display all attributes of the class
+    public void printProductBatch(){
+        if(_date != null) System.out.println("Date: " + _date); else System.out.println("Date: null");
+        if(_time != null) System.out.println("Time: " + _time); else System.out.println("Time: null");
+        if(_category != null) System.out.println("Category: " + _category); else System.out.println("Category: null");
+        System.out.println("Fee: " + _fee);
+        System.out.println("Quantity: " + _quantity);
+        System.out.println("Assembly Time: " + _aTime);
+        System.out.println("Cost: " + _cost);
+    }
+
 
 }
