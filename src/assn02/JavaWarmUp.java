@@ -112,26 +112,26 @@ public class JavaWarmUp {
     public static void printHighest(ProductBatch[] list){
         int index = getMaxPriceIndex(list);
         System.out.println("Highest per unit assembling fee:");
-        System.out.println("        When: " + list[index].get_date() + " " + list[index].get_time());
-        System.out.println("        Category: " + list[index].get_category());
-        System.out.println("        Price: " + list[index].get_fee());
+        System.out.println("\tWhen: " + list[index].get_date() + " " + list[index].get_time());
+        System.out.println("\tCategory: " + list[index].get_category());
+        System.out.println("\tPrice: " + list[index].get_fee());
     }
 
     //void method for printing the lowest assembly fee (that comes latest in the list)
     public static void printLowest(ProductBatch[] list){
         int index = getMinPriceIndex(list);
         System.out.println("Lowest per unit assembling fee:");
-        System.out.println("        When: " + list[index].get_date() + " " + list[index].get_time());
-        System.out.println("        Category: " + list[index].get_category());
-        System.out.println("        Price: " + list[index].get_fee());
+        System.out.println("\tWhen: " + list[index].get_date() + " " + list[index].get_time());
+        System.out.println("\tCategory: " + list[index].get_category());
+        System.out.println("\tPrice: " + list[index].get_fee());
     }
 
     //void method for printing the summary statistics for producing a given category of product
     public static void printStats(String cat, ProductBatch[] list){
         System.out.println("Statistic of " + cat);
-        System.out.println("        Quantity: " + calcTotalQuantity(cat, list));
-        System.out.println("        Average Assembling Fee: " + Math.round(calcAvgFee(cat, list)*100.0)/100.0);
-        System.out.println("        Average Net Profit: " + Math.round(calcNetProfit(cat, list)*100.0)/100.0);
+        System.out.println("\tQuantity: " + calcTotalQuantity(cat, list));
+        System.out.println("\tAverage Assembling Fee: " + Math.round(calcAvgFee(cat, list)*100.0)/100.0);
+        System.out.println("\tAverage Net Profit: " + Math.round(calcNetProfit(cat, list)*100.0)/100.0);
     }
 
     //void method to print out the list of product batches. Testing purposes only
