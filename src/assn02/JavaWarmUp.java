@@ -1,11 +1,16 @@
 package assn02;
 
 import java.util.Scanner;
+import java.util.HashSet;
 
 public class JavaWarmUp {
     //main method
     public static void main(String args[]){
+        //create new var for number of items
         int itemCount;
+
+        //create hash set to store categories
+        HashSet<String> cats = new HashSet<String>();
 
         //creating  new scanner object
         Scanner scan = new Scanner(System.in);
@@ -17,12 +22,13 @@ public class JavaWarmUp {
         ProductBatch[] prodList = new ProductBatch[itemCount];
 
         //query for and add ProductBatch to array
+        //add unique product categories to hashset
         for(int i = 0; i < itemCount; i++){
             prodList[i] = new ProductBatch(scan.nextLine().split(" "));
         }
 
+        //Print out summary statistics and data
         printList(prodList);
-        System.out.println();
         printHighest(prodList);
         printLowest(prodList);
 
@@ -75,7 +81,8 @@ public class JavaWarmUp {
         System.out.println(" Price: " + list[index].get_fee());
     }
 
-    //void method to print out the list of product batches. Testing purposes
+    //void method to print out the list of product batches. Testing purposes only
+    //not used for assn02
     public static void printList(ProductBatch[] list){
         for(int i = 0; i < list.length; i++){
             System.out.println("Index: " + i);
@@ -85,7 +92,7 @@ public class JavaWarmUp {
             System.out.println("Fee: " + list[i].get_fee());
             System.out.println("Quantity: " + list[i].get_quantity());
             System.out.println("Assembly Time: " + list[i].get_aTime());
-            System.out.println("Cost: " + list[i].get_aTime()+ "\n");
+            System.out.println("Cost: " + list[i].get_cost()+ "\n");
         }
     }
 
