@@ -135,8 +135,8 @@ public class JavaWarmUp {
     public static void printStats(String cat, ProductBatch[] list){
         System.out.println("Statistic of " + cat);
         System.out.println("\tQuantity: " + calcTotalQuantity(cat, list));
-        System.out.printf("\tAverage Assembling Fee: %f.2f\n", Math.round(calcAvgFee(cat, list)*100.0)/100.0);
-        System.out.printf("\tAverage Net Profit: %f.2f\n", Math.round(calcNetProfit(cat, list)*100.0)/100.0);
+        System.out.printf("\tAverage Assembling Fee: %.2f\n", Math.round(calcAvgFee(cat, list)*100.0)/100.0);
+        System.out.printf("\tAverage Net Profit: %.2f\n", Math.round(calcNetProfit(cat, list)*100.0)/100.0);
     }
 
     //void method to print out the list of product batches. Testing purposes only
