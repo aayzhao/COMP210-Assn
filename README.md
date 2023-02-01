@@ -6,5 +6,5 @@ Assignment files/packages are located in the file titled src, while zips are in 
 Simple "Hello, World" assignment, with some basic type and memory comprehension
 
 ## Assn02
-JavaWarmUp - main method class
+JavaWarmUp - main method class\n
 ProductBatch - helper class for organizing info
