@@ -4,6 +4,7 @@
  * It contains a no argument constructor and a constructor for all arguments, along with
  * accompanying accessor functions for returning attributes, etc.
  * @author Aaron Zhao
+ * @version 1.7
  * @date 2/1/2023
  */
 package assn02;
@@ -49,9 +50,13 @@ public class ProductBatch {
         _cost = cost;
     }
 
-    //String[] constructor
-    //Assumes a String[] of length 7 is given, with date, time, etc in order starting with
-    //date at index 0
+    /**
+     *
+     * String[] constructor
+     * Assumes a String[] of length 7 is given, with date, time, etc in order starting with
+     * date at index 0
+     * @param batch     A string[] detailing attributes of the batch
+     */
     public ProductBatch(String[] batch){
         _date = batch[0];
         _time = batch[1];
@@ -63,31 +68,73 @@ public class ProductBatch {
     }
 
     //accessor methods
+
+    /**
+     *
+     * accessor/getter method for _date variable.
+     * @return      returns _date as string
+     */
     public String get_date(){
         return _date;
     }
+
+    /**
+     *
+     * accessor/getter method for _time variable
+     * @return      returns _time as string
+     */
     public String get_time(){
         return _time;
     }
+
+    /**
+     *
+     * accessor/getter method for _category variable
+     * @return      returns _category as string
+     */
     public String get_category(){
         return _category;
     }
+
+    /**
+     *
+     * accessor/getter method for _fee variable
+     * @return      returns _fee as double
+     */
     public double get_fee(){
         return _fee;
     }
+
+    /**
+     *
+     * accessor/getter method for _quantity variable
+     * @return      returns _quantity as int
+     */
     public int get_quantity(){
         return _quantity;
     }
+
+    /**
+     *
+     * accessor/getter method for _aTime variable
+     * @return      returns _aTime as double
+     */
     public double get_aTime(){
         return _aTime;
     }
+
+    /**
+     *
+     * accessor/getter method for _cost variable
+     * @return      returns _cost as int
+     */
     public int get_cost(){
         return _cost;
     }
 
     /**
      *
-     * print method to display all attributes of the class
+     * print method to display all attributes of the class with formatting
      */
     public void print(){
         if(_date != null) System.out.println("Date: " + _date); else System.out.println("Date: null");
