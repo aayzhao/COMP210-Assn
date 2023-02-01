@@ -1,3 +1,5 @@
+package assn02;
+
 /**
  *
  * The ProductBatch class is mean to store all parameters given in each line of input for products.
@@ -7,8 +9,6 @@
  * @version     1.7
  * @date        2/1/2023
  */
-package assn02;
-
 public class ProductBatch {
     //private class variables
     private String _date; //date of assembly
