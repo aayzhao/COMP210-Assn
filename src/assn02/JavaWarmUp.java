@@ -1,3 +1,13 @@
+/**
+ *
+ * Main method for assn02. Contains relevant variables and helper methods to complete
+ * the given task.
+ *
+ * @author Aaron Zhao
+ * @version 1.15
+ * @date 2/1/2023
+ */
+
 package assn02;
 
 import java.util.Scanner;
