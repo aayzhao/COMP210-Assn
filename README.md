@@ -7,4 +7,5 @@ Simple "Hello, World" assignment, with some basic type and memory comprehension
 
 ## Assn02
 JavaWarmUp - main method class
+
 ProductBatch - helper class for organizing info
