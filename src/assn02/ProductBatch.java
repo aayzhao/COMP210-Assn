@@ -3,9 +3,9 @@
  * The ProductBatch class is mean to store all parameters given in each line of input for products.
  * It contains a no argument constructor and a constructor for all arguments, along with
  * accompanying accessor functions for returning attributes, etc.
- * @author Aaron Zhao
- * @version 1.7
- * @date 2/1/2023
+ * @author      Aaron Zhao
+ * @version     1.7
+ * @date        2/1/2023
  */
 package assn02;
 
