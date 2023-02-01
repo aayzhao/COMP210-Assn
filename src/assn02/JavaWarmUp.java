@@ -12,7 +12,7 @@ public class JavaWarmUp {
         //create hash set to store categories
         //not used in assn02 as autograder requires inputs to be in specific order
         //regardless of creation, quantity, etc.
-        HashSet<String> uniqueCategories = new HashSet<String>();
+        HashSet<String> uniqueCategories = new HashSet<>();
 
         //creating  new scanner object
         Scanner scan = new Scanner(System.in);
@@ -48,7 +48,12 @@ public class JavaWarmUp {
     //helper methods
     //find/calculate statistics based on given list
 
-    //finds index of the ProductBatch with the highest price/fee
+    /**
+     *
+     * finds index of the ProductBatch with the highest price/fee
+     * @param list      list of ProductBatch objects
+     * @return          returns the index
+     */
     public static int getMaxPriceIndex(ProductBatch[] list) {
         int index = list.length - 1;
         for (int i = list.length - 2; i >= 0; i--) {
@@ -59,7 +64,12 @@ public class JavaWarmUp {
         return index;
     }
 
-    //finds index of the ProductBatch with the lowest price/fee
+    /**
+     *
+     * finds index of the ProductBatch with the lowest price/fee
+     * @param list      list of ProductBatch objects
+     * @return          returns the index
+     */
     public static int getMinPriceIndex(ProductBatch[] list) {
         int index = list.length - 1;
         for (int i = list.length - 2; i >= 0; i--) {
@@ -70,7 +80,13 @@ public class JavaWarmUp {
         return index;
     }
 
-    //calculates total quantity of a category produced
+    /**
+     *
+     * calculates total quantity of a category produced
+     * @param cat       category name
+     * @param list      list of ProductBatch objects
+     * @return          returns the total quantity
+     */
     public static int calcTotalQuantity(String cat, ProductBatch[] list){
         int total = 0;
         for(ProductBatch product : list){
@@ -79,8 +95,14 @@ public class JavaWarmUp {
         return total;
     }
 
-    //calculates weighted average assembling fee and returns a double (not rounded or truncated)
-    //for a certain category of product
+    /**
+     *
+     * calculates weighted average assembling fee and returns a double (not rounded or truncated)
+     * for a certain category of product
+     * @param cat       category name
+     * @param list      list of ProductBatch objects
+     * @return          returns the total quantity
+     */
     public static double calcAvgFee(String cat, ProductBatch[] list){
         double avg = 0;
         int total = 0;
@@ -93,8 +115,14 @@ public class JavaWarmUp {
         return avg/(double)total;
     }
 
-    //calculates the weighted average net profit for a given category of profit
-    //returns a double (not rounded or truncated)
+    /**
+     *
+     * calculates the weighted average net profit for a given category of profit
+     * and returns a double (not rounded or truncated)
+     * @param cat       category name
+     * @param list      list of ProductBatch objects
+     * @return          returns weighted average
+     */
     public static double calcNetProfit(String cat, ProductBatch[] list){
         double avg = 0;
         int totalUnits = 0;
@@ -115,7 +143,11 @@ public class JavaWarmUp {
     //void printing methods
     //print out things to console
 
-    //void method for printing the highest assembly fee (that comes latest in the list)
+    /**
+     *
+     * void method for printing the highest assembly fee (that comes latest in the list)
+     * @param list      list of ProductBatch objects
+     */
     public static void printHighest(ProductBatch[] list){
         int index = getMaxPriceIndex(list);
         System.out.println("Highest per unit assembling fee:");
@@ -124,7 +156,11 @@ public class JavaWarmUp {
         System.out.println("\tPrice: " + list[index].get_fee());
     }
 
-    //void method for printing the lowest assembly fee (that comes latest in the list)
+    /**
+     *
+     * void method for printing the lowest assembly fee (that comes latest in the list)
+     * @param list      list of ProductBatch objects
+     */
     public static void printLowest(ProductBatch[] list){
         int index = getMinPriceIndex(list);
         System.out.println("Lowest per unit assembling fee:");
@@ -133,7 +169,12 @@ public class JavaWarmUp {
         System.out.println("\tPrice: " + list[index].get_fee());
     }
 
-    //void method for printing the summary statistics for producing a given category of product
+    /**
+     *
+     * void method for printing the summary statistics for producing a given category of product
+     * @param cat       category of product
+     * @param list      list of ProductBatch objects
+     */
     public static void printStats(String cat, ProductBatch[] list){
         System.out.println("Statistic of " + cat);
         System.out.println("\tQuantity: " + calcTotalQuantity(cat, list));
@@ -141,8 +182,12 @@ public class JavaWarmUp {
         System.out.printf("\tAverage Net Profit: %.2f\n", calcNetProfit(cat, list));
     }
 
-    //void method to print out the list of product batches. Testing purposes only
-    //not used for assn02
+    /**
+     *
+     * void method to print out the list of product batches. Testing purposes only.
+     * Not used for assn02
+     * @param list      list of ProductBatch objects
+     */
     public static void printList(ProductBatch[] list){
         for(int i = 0; i < list.length; i++){
             System.out.println("Index: " + i);

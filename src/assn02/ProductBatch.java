@@ -1,7 +1,11 @@
-/*This class is mean to store all parameters given in each line of input for products.
-* It contains a no argument constructor and a constructor for all arguments, along with
-* accompanying accessor functions for returning attributes, etc.
-*/
+/**
+ *
+ * The ProductBatch class is mean to store all parameters given in each line of input for products.
+ * It contains a no argument constructor and a constructor for all arguments, along with
+ * accompanying accessor functions for returning attributes, etc.
+ * @author Aaron Zhao
+ * @date 2/1/2023
+ */
 package assn02;
 
 public class ProductBatch {
@@ -14,12 +18,25 @@ public class ProductBatch {
     private double _aTime; //assembly time for this batch of product
     private int _cost; //total cost for producing this batch of product
 
-    //no-arg constructor
+    /**
+     *
+     * no-arg constructor
+     */
     public ProductBatch(){
 
     }
 
-    //6-arg constructor
+    /**
+     *
+     * 6-arg constructor
+     * @param date      date in MM/DD/YY (string format)
+     * @param time      time in HH:MM format (string)
+     * @param category  category of product as a string
+     * @param fee       per unit assembly fee as double
+     * @param quantity  total units made in batch as an int
+     * @param aTime     time taken to assemble specific batch of products as double
+     * @param cost      total cost of producing the specific batch as int
+     */
     public ProductBatch(String date, String time, String category,
                         double fee, int quantity,
                         double aTime, int cost){
@@ -68,7 +85,10 @@ public class ProductBatch {
         return _cost;
     }
 
-    //print method to display all attributes of the class
+    /**
+     *
+     * print method to display all attributes of the class
+     */
     public void print(){
         if(_date != null) System.out.println("Date: " + _date); else System.out.println("Date: null");
         if(_time != null) System.out.println("Time: " + _time); else System.out.println("Time: null");
