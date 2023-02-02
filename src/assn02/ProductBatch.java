@@ -7,7 +7,6 @@ package assn02;
  * accompanying accessor functions for returning attributes, etc.
  * @author      Aaron Zhao
  * @version     1.7
- * @date        2/1/2023
  */
 public class ProductBatch {
     //private class variables
@@ -21,7 +20,7 @@ public class ProductBatch {
 
     /**
      *
-     * no-arg constructor
+     * default constructor
      */
     public ProductBatch(){
 

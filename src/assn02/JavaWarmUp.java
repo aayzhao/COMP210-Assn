@@ -10,10 +10,13 @@ import java.util.HashSet;
  *
  * @author      Aaron Zhao
  * @version     1.15
- * @date        2/1/2023
  */
 public class JavaWarmUp {
-    //main method
+    /**
+     *
+     * Main method for Assn02
+     * @param args      args for main
+     */
     public static void main(String[] args){
         //create new var for number of items
         int itemCount;
