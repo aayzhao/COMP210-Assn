@@ -9,3 +9,6 @@ Simple "Hello, World" assignment, with some basic type and memory comprehension
 JavaWarmUp - main method class
 
 ProductBatch - helper class for organizing info
+
+## SelfPractice
+LinkedListPractice - practice with linked lists main method workspace
