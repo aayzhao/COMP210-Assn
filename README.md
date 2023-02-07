@@ -12,3 +12,5 @@ ProductBatch - helper class for organizing info
 
 ## SelfPractice
 LinkedListPractice - practice with linked lists main method workspace
+
+BinarySearch - practice with binary searches main method workspace
