@@ -3,6 +3,8 @@ package selfPractice;
 /**
  *
  * Self-written binary search algorithm
+ * @author Aaron Zhao
+ * @version 1.0
  */
 public class BinarySearch {
     public static void main(String[] args){ //for testing
