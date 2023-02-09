@@ -11,6 +11,10 @@ public class Main {
     public static void main(String[] args){
         Main y = new Main(5);
         System.out.println(y.getNum());
+
+        for(int i = 0; i < 5; i++){
+            System.out.println(i);
+        }
     }
 
     public Main(int num){
