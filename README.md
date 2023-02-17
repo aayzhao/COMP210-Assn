@@ -10,6 +10,9 @@ JavaWarmUp - main method class
 
 ProductBatch - helper class for organizing info
 
+## Assn03
+All files for Assn03
+
 ## SelfPractice
 LinkedListPractice - practice with linked lists main method workspace
 
