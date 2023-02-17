@@ -169,11 +169,11 @@ public class LinkedList<T> {
             if (tempMerge != null) mergeNode = tempMerge;
         }
 
-        if (size == list2.size()) {
+        if (size - list2.size() == list2.size()) { //check if sizes before merge were equal
             tail = mergeNode;
         }
 
-        //set list2 to null as it has been merged into this.list
+        //set list2 attributes to null as it has been merged into this.list
         list2.setHead(null);
         list2.setTail(null);
         list2.setSize(0);

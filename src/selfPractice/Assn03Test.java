@@ -1,6 +1,8 @@
-package assn03;
-//DELETE BEFORE SUBMISSION
-public class test {
+package selfPractice;
+
+import assn03.LinkedList;
+
+public class Assn03Test {
     public static void main(String[] args) {
         LinkedList<Integer> list = new LinkedList<>();
         list.add(1);
