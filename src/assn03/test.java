@@ -4,7 +4,10 @@ public class test {
     public static void main(String[] args) {
         LinkedList<Integer> list = new LinkedList<>();
         list.add(1);
+        list.add(1);
         list.add(2);
+        list.add(3);
+        list.add(3);
         list.add(3);
 
         LinkedList list2 = new LinkedList();
@@ -19,6 +22,9 @@ public class test {
 
         //System.out.println(list);
 
-        System.out.println(list.isEqual(list2));
+        //System.out.println(list.isEqual(list2));
+
+        list.removeRepeats();
+        System.out.print(list);
     }
 }

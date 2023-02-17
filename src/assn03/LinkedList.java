@@ -77,6 +77,15 @@ public class LinkedList<T> {
      *
      */
     public void removeRepeats() {
+        Node<T> current = head;
+
+        while(current != null && current.getNext() != null){
+            if(current.getValue().equals(current.getNext().getValue())) {
+                current.setNext(current.getNext().getNext());
+                continue;
+            }
+            current = current.getNext();
+        }
     }
 
 
