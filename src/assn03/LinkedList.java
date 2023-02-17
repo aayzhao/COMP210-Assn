@@ -13,14 +13,24 @@ public class LinkedList<T> {
      * Remove the node at index i of the list.
      * Note that the first element is at index 0
      * If i is larger than the size of the list, throw an IndexOutOfBounds Exception
-     *
+     * <p>
      * ex: list: A -> B -> C -> D
      *     i: 1
      *     list after removeAtIndex: A -> C -> D
      *
      * @param i    - index of node to remove
      */
-    public void removeAtIndex(int i) {
+    public void removeAtIndex(int i) throws IndexOutOfBoundsException {
+        if (i >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+        Node<T> current = head;
+        int index = 0;
+        while (index < i - 1) {
+            current = current.getNext();
+            i++;
+        }
+        current.setNext(current.getNext().getNext());
     }
 
 
@@ -33,7 +43,7 @@ public class LinkedList<T> {
      * ex:  list: 1 -> 4 -> 2
      *      list2: 1 -> 4 -> 2
      *      return: true
-     *
+     * <p>
      *      list: 1 -> 5
      *      list2: 2 -> 5
      *      return false;
@@ -63,7 +73,7 @@ public class LinkedList<T> {
     /**
      * Task4
      * Reverse the list
-     *
+     * <p>
      * ex list:  10 -> 9 -> 8 -> 7
      *    list after reverse: 7 -> 8 -> 9 -> 10
      *
@@ -80,13 +90,13 @@ public class LinkedList<T> {
      * Merge the given linked list into the current list. The 2 lists will always be
      * either the same size, or the current list will be longer than list2.
      * The examples below show how to handle each case.
-     *
+     * <p>
      * Note: Do NOT create and return a new list, merge the second list into the first one.
-     *
+     * <p>
      * ex: list: 1 -> 2 -> 3
      *     list2: 4 -> 5 -> 6
      *     return: 1 -> 4 -> 2 -> 5 -> 3 -> 6
-     *
+     * <p>
      *     list: 1 -> 2 -> 3 -> 4
      *     list2: 5 -> 6
      *     return 1 -> 5 -> 2 -> 6 -> 3 -> 4
