@@ -165,8 +165,27 @@ public class LinkedList<T> {
             mergeNode = tempMerge;
         }
 
+        //set list2 to null as it has been merged into this.list
+        list2.setHead(null);
+        list2.setTail(null);
+        list2.setSize(0);
+
+
     }
 
+    //added helper methods
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public void setHead(Node<T> head) {
+        this.head = head;
+    }
+
+    public void setTail(Node<T> tail) {
+        this.tail = tail;
+    }
 
     /* Implementation given to you. Do not modify below this. */
 
