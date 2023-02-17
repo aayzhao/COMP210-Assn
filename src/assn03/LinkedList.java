@@ -21,16 +21,19 @@ public class LinkedList<T> {
      * @param i    - index of node to remove
      */
     public void removeAtIndex(int i) throws IndexOutOfBoundsException {
-        if (i >= size) {
-            throw new IndexOutOfBoundsException();
-        }
+        validIndex(i);
         Node<T> current = head;
+        if (i == 0) {
+            head.setNext(head.getNext());
+            return;
+        }
         int index = 0;
         while (index < i - 1) {
             current = current.getNext();
-            i++;
+            index++;
         }
         current.setNext(current.getNext().getNext());
+        size -= 1;
     }
 
 
@@ -82,6 +85,7 @@ public class LinkedList<T> {
         while(current != null && current.getNext() != null){
             if(current.getValue().equals(current.getNext().getValue())) {
                 current.setNext(current.getNext().getNext());
+                size -= 1;
                 continue;
             }
             current = current.getNext();
@@ -100,6 +104,11 @@ public class LinkedList<T> {
      *
      */
     public void reverse() {
+        if(size <= 1){ return;}
+        Node<T> current = head;
+        Node<T> temp = current.getNext();
+
+
     }
 
 
