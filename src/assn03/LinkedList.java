@@ -338,10 +338,6 @@ public class LinkedList<T> {
         return head;
     }
 
-    public Node<T> getTail() {
-        return tail;
-    }
-
     @Override
     public String toString() {
         String list = "";
