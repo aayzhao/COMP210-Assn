@@ -147,9 +147,24 @@ public class LinkedList<T> {
      *     list2: 5 -> 6
      *     return 1 -> 5 -> 2 -> 6 -> 3 -> 4
      *
-     * @param list2
+     * @param list2     linked list to be merged with current list
      */
-    public void merge(LinkedList list2) {
+    public void merge(LinkedList<T> list2) {
+        Node<T> current = head;
+        Node<T> mergeNode =  list2.getHead();
+        Node<T> tempCur;
+        Node<T> tempMerge;
+        while (mergeNode != null) {
+            tempMerge = mergeNode.getNext();
+            tempCur = current.getNext();
+
+            current.setNext(mergeNode);
+            mergeNode.setNext(tempCur);
+
+            current = tempCur;
+            mergeNode = tempMerge;
+        }
+
     }
 
 

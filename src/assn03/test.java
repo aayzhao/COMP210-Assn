@@ -5,16 +5,16 @@ public class test {
         LinkedList<Integer> list = new LinkedList<>();
         list.add(1);
         list.add(1);
-        list.add(2);
-        list.add(3);
-        list.add(3);
-        list.add(3);
+        list.add(1);
+        list.add(1);
+        list.add(1);
+        list.add(1);
 
         LinkedList list2 = new LinkedList();
-        list2.add(1);
-        list2.add(2);
-        list2.add(3);
-        list2.add(10);
+        list2.add(0);
+        list2.add(0);
+        list2.add(0);
+        list2.add(0);
 
         /*
         System.out.println(list);
@@ -33,10 +33,13 @@ public class test {
         System.out.println(list.getHead().getValue());
         System.out.println(list.getTail().getValue());
 
-         */
+
 
         System.out.println(list2);
         list2.reverse();
         System.out.println(list2);
+        */
+        list.merge(list2);
+        System.out.println(list);
     }
 }
