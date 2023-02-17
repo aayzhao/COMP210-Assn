@@ -21,6 +21,8 @@ public class test {
         list.removeAtIndex(2);
 
         System.out.println(list);
+        System.out.println(list.getHead().getValue());
+        System.out.println(list.getTail().getValue());
 
         //System.out.println(list.isEqual(list2));
 

@@ -24,7 +24,7 @@ public class LinkedList<T> {
         validIndex(i);
         Node<T> current = head;
         if (i == 0) {
-            head.setNext(head.getNext());
+            head =head.getNext();
             return;
         }
         int index = 0;
@@ -34,6 +34,8 @@ public class LinkedList<T> {
         }
         current.setNext(current.getNext().getNext());
         size -= 1;
+
+        if (i == size) { tail = current; }
     }
 
 
@@ -320,6 +322,10 @@ public class LinkedList<T> {
     }
     public Node<T> getHead() {
         return head;
+    }
+
+    public Node<T> getTail() {
+        return tail;
     }
 
     @Override
