@@ -56,7 +56,7 @@ public class LinkedList<T> {
      * @param list2 - the list to merge into the current list
      * @return true if the lists have the same elements in the same order, false otherwise
      */
-    public boolean isEqual(LinkedList list2) {
+    public boolean isEqual(LinkedList<T> list2) {
         if (size != list2.size()){
             return false;
         }
@@ -92,6 +92,8 @@ public class LinkedList<T> {
             }
             current = current.getNext();
         }
+
+        tail = current;
     }
 
 
@@ -108,8 +110,20 @@ public class LinkedList<T> {
     public void reverse() {
         if(size <= 1){ return;}
         Node<T> current = head;
-        Node<T> temp = current.getNext();
+        Node<T> nextIns = head;
 
+        while(nextIns != tail) {
+            current = current.getNext();
+
+            nextIns.setNext(tail.getNext());
+            tail.setNext(nextIns);
+
+            nextIns = current;
+        }
+
+        current = head;
+        head = tail;
+        tail = current;
 
     }
 
