@@ -334,6 +334,7 @@ public class LinkedList<T> {
             throw new IndexOutOfBoundsException("Invalid index");
         }
     }
+
     public Node<T> getHead() {
         return head;
     }
