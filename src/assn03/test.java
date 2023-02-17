@@ -15,6 +15,8 @@ public class test {
         list2.add(0);
         list2.add(0);
         list2.add(0);
+        list2.add(0);
+        list2.add(10);
 
         /*
         System.out.println(list);
@@ -41,5 +43,6 @@ public class test {
         */
         list.merge(list2);
         System.out.println(list);
+        System.out.println(list.getTail().getValue());
     }
 }
