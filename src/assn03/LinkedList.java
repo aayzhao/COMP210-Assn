@@ -150,6 +150,8 @@ public class LinkedList<T> {
      * @param list2     linked list to be merged with current list
      */
     public void merge(LinkedList<T> list2) {
+        if (list2.size() == 0) return;
+
         size = list2.size() + size;
         Node<T> current = head;
         Node<T> mergeNode =  list2.getHead();
