@@ -10,15 +10,15 @@ public class test {
         LinkedList list2 = new LinkedList();
         list2.add(1);
         list2.add(2);
-        list2.add(3);
+        //list2.add(3);
 
         System.out.println(list);
         System.out.println(list2 + "\n");
 
-        list.removeAtIndex(1);
+        //list.removeAtIndex(3);
 
-        System.out.println(list);
+        //System.out.println(list);
 
-        //System.out.println(list.isEqual(list2));
+        System.out.println(list.isEqual(list2));
     }
 }
