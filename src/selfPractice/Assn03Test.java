@@ -4,6 +4,7 @@ import assn03.LinkedList;
 
 public class Assn03Test {
     public static void main(String[] args) {
+        /*
         LinkedList<Integer> list = new LinkedList<>();
         list.add(1);
         list.add(1);
@@ -20,7 +21,7 @@ public class Assn03Test {
         list2.add(0);
         list2.add(10);
 
-        /*
+
         System.out.println(list);
         //System.out.println(list2 + "\n");
 
@@ -42,9 +43,23 @@ public class Assn03Test {
         System.out.println(list2);
         list2.reverse();
         System.out.println(list2);
-        */
+
         list.merge(list2);
         System.out.println(list);
         System.out.println(list.getTail().getValue());
+
+        */
+
+        LinkedList<Integer> list = new LinkedList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        System.out.println(list);
+
+        list.removeAtIndex(3);
+        list.removeAtIndex(3);
+        System.out.println(list);
     }
 }
