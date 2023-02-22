@@ -24,7 +24,7 @@ public class LinkedList<T> {
         validIndex(i);
         Node<T> current = head;
         if (i == 0) {
-            head =head.getNext();
+            head = head.getNext();
             return;
         }
         int index = 0;
@@ -108,22 +108,19 @@ public class LinkedList<T> {
      *
      */
     public void reverse() {
-        if(size <= 1){ return;}
         Node<T> current = head;
         Node<T> nextIns = head;
+        Node<T> lastIns = null;
+        tail = head;
 
-        while(nextIns != tail) {
-            current = current.getNext();
-
-            nextIns.setNext(tail.getNext());
-            tail.setNext(nextIns);
-
-            nextIns = current;
+        while(current != null) {
+            nextIns = nextIns.getNext();
+            current.setNext(lastIns);
+            lastIns = current;
+            current = nextIns;
         }
 
-        current = head;
-        head = tail;
-        tail = current;
+        head = lastIns;
 
     }
 
@@ -147,7 +144,10 @@ public class LinkedList<T> {
      *     list2: 5 -> 6
      *     return 1 -> 5 -> 2 -> 6 -> 3 -> 4
      *
-     * @param list2     linked list to be merged with current list
+     * <p>
+     *
+     *
+     * @param list2     linked list to be merged with current list. THIS GETS DELETED AFTER MERGE
      */
     public void merge(LinkedList<T> list2) {
         Node<T> current = head;
