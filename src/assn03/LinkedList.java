@@ -150,22 +150,30 @@ public class LinkedList<T> {
      * @param list2     linked list to be merged with current list. THIS GETS DELETED AFTER MERGE
      */
     public void merge(LinkedList<T> list2) {
+        if (list2.size() == 0) return;
+
+        size = list2.size() + size;
         Node<T> current = head;
         Node<T> mergeNode =  list2.getHead();
         Node<T> tempCur;
-        Node<T> tempMerge;
-        while (mergeNode != null) {
-            tempMerge = mergeNode.getNext();
+        Node<T> tempMerge = mergeNode.getNext();
+        while (tempMerge != null) {
+
             tempCur = current.getNext();
 
             current.setNext(mergeNode);
-            mergeNode.setNext(tempCur);
 
+            tempMerge = mergeNode.getNext();
+            mergeNode.setNext(tempCur);
             current = tempCur;
-            mergeNode = tempMerge;
+            if (tempMerge != null) mergeNode = tempMerge;
         }
 
-        //set list2 to null as it has been merged into this.list
+        if (size - list2.size() == list2.size()) { //check if sizes before merge were equal
+            tail = mergeNode;
+        }
+
+        //set list2 attributes to null as it has been merged into this.list
         list2.setHead(null);
         list2.setTail(null);
         list2.setSize(0);
@@ -185,6 +193,9 @@ public class LinkedList<T> {
 
     public void setTail(Node<T> tail) {
         this.tail = tail;
+    }
+    public Node<T> getTail() {
+        return tail;
     }
 
     /* Implementation given to you. Do not modify below this. */
