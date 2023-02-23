@@ -23,19 +23,20 @@ public class LinkedList<T> {
     public void removeAtIndex(int i) throws IndexOutOfBoundsException {
         validIndex(i);
         Node<T> current = head;
+        size--;
+
         if (i == 0) {
             head = head.getNext();
-            size--;
             if (size == 0) tail = null;
             return;
         }
+
         int index = 0;
         while (index < i - 1) {
             current = current.getNext();
             index++;
         }
         current.setNext(current.getNext().getNext());
-        size--;
 
         if (i == size) tail = current;
     }
