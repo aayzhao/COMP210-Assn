@@ -10,6 +10,7 @@ public class Assn03Test {
         list.add(1);
         list.add(1);
         list.add(1);
+        list.add(10);
 
         LinkedList list2 = new LinkedList();
         list2.add(0);
@@ -40,6 +41,9 @@ public class Assn03Test {
         list2.reverse();
         System.out.println(list2);
         */
+
+        list2.removeRepeats();
+        System.out.println(list2);
         list.merge(list2);
         System.out.println(list);
     }
