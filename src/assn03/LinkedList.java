@@ -25,6 +25,8 @@ public class LinkedList<T> {
         Node<T> current = head;
         if (i == 0) {
             head = head.getNext();
+            size--;
+            if (size == 0) tail = null;
             return;
         }
         int index = 0;
@@ -33,9 +35,9 @@ public class LinkedList<T> {
             index++;
         }
         current.setNext(current.getNext().getNext());
-        size -= 1;
+        size--;
 
-        if (i == size) { tail = current; }
+        if (i == size) tail = current;
     }
 
 
