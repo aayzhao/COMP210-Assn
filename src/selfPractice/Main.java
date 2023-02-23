@@ -1,5 +1,7 @@
 package selfPractice;
 
+import static java.lang.Integer.valueOf;
+
 /**
  * main method for running anything.
  *
@@ -15,6 +17,10 @@ public class Main {
         for(int i = 0; i < 5; i++){
             System.out.println(i);
         }
+        Integer x = 10;
+        Integer z = 10;
+        System.out.println(x == z);
+
     }
 
     public Main(int num){
