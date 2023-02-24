@@ -1,6 +1,9 @@
 package selfPractice;
 
 import assn03.LinkedList;
+import assn03.Node;
+import assn03.NodeImpl;
+
 public class Assn03Test {
     public static void main(String[] args) {
         LinkedList<Integer> list = new LinkedList<>();
@@ -41,6 +44,9 @@ public class Assn03Test {
         System.out.println(list2);
         */
         list.merge(list2);
+        NodeImpl<Integer> newNode = new NodeImpl<>(6,null); // see what pointer looks like
+        list.add(newNode);
         System.out.println(list);
+
     }
 }
