@@ -23,19 +23,22 @@ public class LinkedList<T> {
     public void removeAtIndex(int i) throws IndexOutOfBoundsException {
         validIndex(i);
         Node<T> current = head;
+        size--;
+
         if (i == 0) {
             head = head.getNext();
+            if (size == 0) tail = null;
             return;
         }
+
         int index = 0;
         while (index < i - 1) {
             current = current.getNext();
             index++;
         }
         current.setNext(current.getNext().getNext());
-        size -= 1;
 
-        if (i == size) { tail = current; }
+        if (i == size) tail = current;
     }
 
 
@@ -154,9 +157,11 @@ public class LinkedList<T> {
 
         size = list2.size() + size;
         Node<T> current = head;
-        Node<T> mergeNode =  list2.getHead();
         Node<T> tempCur;
-        Node<T> tempMerge = mergeNode.getNext();
+
+        Node<T> mergeNode =  list2.getHead();
+        Node<T> tempMerge = mergeNode;
+
         while (tempMerge != null) {
 
             tempCur = current.getNext();
@@ -174,9 +179,7 @@ public class LinkedList<T> {
         }
 
         //set list2 attributes to null as it has been merged into this.list
-        list2.setHead(null);
-        list2.setTail(null);
-        list2.setSize(0);
+        list2.clear();
 
 
     }
