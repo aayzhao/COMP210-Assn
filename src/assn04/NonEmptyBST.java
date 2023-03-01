@@ -16,27 +16,60 @@ public class NonEmptyBST<T extends Comparable<T>> implements BST<T> {
 		_element = element;
 	}
 
-	// TODO: insert
 	@Override
 	public BST<T> insert(T element) {
-		System.out.println("Call");
 		if (element.compareTo(_element) > 0){
 			_right = _right.insert(element);
-			return this;
 		}
 		else if (element.compareTo(_element) < 0) {
 			_left = _left.insert(element);
-			return this;
 		}
 		return this;
 	}
 
-	// TODO: remove
 	@Override
 	public BST<T> remove(T element) {
-		return null; //added to remove error for compiler
+		if(element.compareTo(_element) > 0) { _right = _right.remove(element); }
+		else if (element.compareTo(_element) < 0) { _left = _left.remove(element); }
+
+		else { //found BST holding element to be deleted
+			if(_left.isEmpty() && _right.isEmpty()) { return new EmptyBST<>(); }
+			if(_left.isEmpty() && !_right.isEmpty()) {
+				return _right;
+			}
+			if(!_left.isEmpty() && _right.isEmpty()) {
+				return _left;
+			}
+			else {
+				T successor = RSuccessor();
+				_right = _right.remove(successor);
+				_element = successor;
+			}
+		}
+		return this;
 	}
 
+	//Finds smallest element in right tree
+	private T RSuccessor() {
+		T element;
+		BST<T> it = this.getRight();
+		while (!it.getLeft().isEmpty()){
+			it = it.getLeft();
+		}
+		element = it.getElement();
+		return element;
+	}
+
+	//Finds largest element in left tree
+	private T LSuccessor()  {
+		T element;
+		BST<T> it = this.getLeft();
+		while (!it.getRight().isEmpty()){
+			it = it.getRight();
+		}
+		element = it.getElement();
+		return element;
+	}
 	// TODO: printPreOrderTraversal
 	@Override
 	public void printPreOrderTraversal() {
