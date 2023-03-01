@@ -68,27 +68,37 @@ public class NonEmptyBST<T extends Comparable<T>> implements BST<T> {
 		return element;
 	}
 
-	// TODO: printPreOrderTraversal
 	@Override
 	public void printPreOrderTraversal() {
-		if (!this.isEmpty()) {
-			System.out.print(_element);
-			System.out.print(" ");
-		}
+		System.out.print(_element);
+		System.out.print(" ");
 		_left.printPreOrderTraversal();
 		_right.printPreOrderTraversal();
 	}
 
-	// TODO: printPostOrderTraversal
 	@Override
 	public void printPostOrderTraversal() {
-
+		_left.printPostOrderTraversal();
+		_right.printPostOrderTraversal();
+		System.out.print(_element);
+		System.out.print(" ");
 	}
 
-	// TODO: printBreadthFirstTraversal
 	@Override
 	public void printBreadthFirstTraversal() {
+		Queue<BST<T>> queue = new LinkedList<>();
+		queue.add(this);
+		queueProcessor(queue);
+	}
 
+	public void queueProcessor(Queue<BST<T>> queue){
+		BST<T> node = queue.poll();
+		if (node == null) return;
+		System.out.print(node.getElement());
+		System.out.print(" ");
+		if(!node.getLeft().isEmpty()) { queue.add(node.getLeft()); }
+		if(!node.getRight().isEmpty()) { queue.add(node.getRight()); }
+		queueProcessor(queue);
 	}
 
 	// GetHeight of A Tree

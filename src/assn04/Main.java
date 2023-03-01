@@ -17,7 +17,7 @@ public class Main {
 
 
       //bst = bst.remove(3);
-      bst.printPreOrderTraversal();
+      bst.printBreadthFirstTraversal();
 
 
       System.out.println("Done");
