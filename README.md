@@ -1,5 +1,5 @@
 # COMP210-Assignments
-For Ghani's COMP 210 Spring semester. 
+For Ghani's COMP 210 Spring semester, 2023. 
 Assignment files/packages are located in the file titled src, while zips are in the "zips and other stuff".
 
 ## Assn01
@@ -11,7 +11,10 @@ JavaWarmUp - main method class
 ProductBatch - helper class for organizing info
 
 ## Assn03
-All files for Assn03
+All files for Assn03. Main method used for testing is located in SelfPractice package.
+
+## Assn04
+All files for Assn04. Edits are in the NonEmptyBST.java file.
 
 ## SelfPractice
 LinkedListPractice - practice with linked lists main method workspace
