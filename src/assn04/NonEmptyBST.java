@@ -19,13 +19,22 @@ public class NonEmptyBST<T extends Comparable<T>> implements BST<T> {
 	// TODO: insert
 	@Override
 	public BST<T> insert(T element) {
-		return null; //added to remove error
+		System.out.println("Call");
+		if (element.compareTo(_element) > 0){
+			_right = _right.insert(element);
+			return this;
+		}
+		else if (element.compareTo(_element) < 0) {
+			_left = _left.insert(element);
+			return this;
+		}
+		return this;
 	}
 
 	// TODO: remove
 	@Override
 	public BST<T> remove(T element) {
-		return null; //added to remove error
+		return null; //added to remove error for compiler
 	}
 
 	// TODO: printPreOrderTraversal
