@@ -58,7 +58,7 @@ public class NonEmptyBST<T extends Comparable<T>> implements BST<T> {
 	}
 
 	//Finds largest element in left tree
-	private T LSuccessor()  {
+	private T LSuccessor() {
 		T element;
 		BST<T> it = this.getLeft();
 		while (!it.getRight().isEmpty()){
@@ -71,7 +71,12 @@ public class NonEmptyBST<T extends Comparable<T>> implements BST<T> {
 	// TODO: printPreOrderTraversal
 	@Override
 	public void printPreOrderTraversal() {
-
+		if (!this.isEmpty()) {
+			System.out.print(_element);
+			System.out.print(" ");
+		}
+		_left.printPreOrderTraversal();
+		_right.printPreOrderTraversal();
 	}
 
 	// TODO: printPostOrderTraversal

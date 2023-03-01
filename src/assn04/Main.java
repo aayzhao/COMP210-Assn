@@ -16,8 +16,8 @@ public class Main {
       bst = bst.insert(6);
 
 
-      bst = bst.remove(3);
-      //bst.printPreOrderTraversal();
+      //bst = bst.remove(3);
+      bst.printPreOrderTraversal();
 
 
       System.out.println("Done");
