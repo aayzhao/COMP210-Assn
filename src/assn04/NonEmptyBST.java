@@ -34,12 +34,9 @@ public class NonEmptyBST<T extends Comparable<T>> implements BST<T> {
 
 		else { //found BST holding element to be deleted
 			if(_left.isEmpty() && _right.isEmpty()) { return new EmptyBST<>(); }
-			if(_left.isEmpty() && !_right.isEmpty()) {
-				return _right;
-			}
-			if(!_left.isEmpty() && _right.isEmpty()) {
-				return _left;
-			}
+			if(_left.isEmpty() && !_right.isEmpty()) { return _right; }
+			if(!_left.isEmpty() && _right.isEmpty()) { return _left; }
+
 			else {
 				T successor = RSuccessor();
 				_right = _right.remove(successor);
@@ -70,6 +67,7 @@ public class NonEmptyBST<T extends Comparable<T>> implements BST<T> {
 		element = it.getElement();
 		return element;
 	}
+
 	// TODO: printPreOrderTraversal
 	@Override
 	public void printPreOrderTraversal() {
