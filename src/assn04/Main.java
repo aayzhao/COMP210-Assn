@@ -6,7 +6,7 @@ public class Main {
     This is a basic example of how to create a BST and add values to it.
     You should add more examples and use this class to debug your code
     */
-    BST<Integer> bst = new NonEmptyBST<Integer>(3);
+    BST<Integer> bst = new NonEmptyBST<>(3);
       bst = bst.insert(8);
       bst = bst.insert(1);
       bst = bst.insert(9);
