@@ -34,6 +34,9 @@ public class EmptyBST<T extends Comparable<T>> implements BST<T> {
 	}
 
 	@Override
+	public void printInOrderTraversal() { return; }
+
+	@Override
 	public BST<T> getLeft() {
 		throw new UnsupportedOperationException();
 	}

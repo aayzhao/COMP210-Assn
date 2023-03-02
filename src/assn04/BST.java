@@ -42,6 +42,12 @@ public interface BST<T extends Comparable<T>> {
   void printBreadthFirstTraversal();
 
   /**
+   * Prints the inorder traversal of the tree.
+   * Prints the elements all in one line with a space after each element.
+   */
+  void printInOrderTraversal();
+
+  /**
    * Returns the longest path from the root value to a leaf in the tree
    *
    * @return the longest path from the root to a leaf.

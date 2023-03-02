@@ -18,6 +18,11 @@ public class Main { public static void main(String[] args) {
     bst = bst.remove(21);
     bst.printBreadthFirstTraversal();
 
+    System.out.println();
+
+    bst.printInOrderTraversal();
+
+    System.out.println();
     System.out.println("Done");
   }
 

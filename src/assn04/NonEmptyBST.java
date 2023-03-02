@@ -112,6 +112,13 @@ public class NonEmptyBST<T extends Comparable<T>> implements BST<T> {
 		queueProcessor(queue);
 	}
 
+	public void printInOrderTraversal() {
+		_left.printInOrderTraversal();
+		System.out.print(_element);
+		System.out.print(" ");
+		_right.printInOrderTraversal();
+	}
+
 	// GetHeight of A Tree
 
 	@Override
