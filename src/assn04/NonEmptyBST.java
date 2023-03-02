@@ -30,23 +30,26 @@ public class NonEmptyBST<T extends Comparable<T>> implements BST<T> {
 	@Override
 	public BST<T> remove(T element) {
 		if(element.compareTo(_element) > 0) { _right = _right.remove(element); }
-		else if (element.compareTo(_element) < 0) { _left = _left.remove(element); }
+		if (element.compareTo(_element) < 0) { _left = _left.remove(element); }
 
-		else { //found BST holding element to be deleted
-			if(_left.isEmpty() && _right.isEmpty()) { return new EmptyBST<>(); }
-			else if(_left.isEmpty()) { return _right; }
-			else if(_right.isEmpty()) { return _left; }
+		//found BST holding element to be deleted
 
-			else {
-				T successor = RSuccessor();
-				_right = _right.remove(successor);
-				_element = successor;
-			}
+		if(_left.isEmpty() && _right.isEmpty()) { return new EmptyBST<>(); } //node is leaf
+
+		//node has one child
+		else if(_left.isEmpty()) { return _right; }
+		else if(_right.isEmpty()) { return _left; }
+
+		//node has two children
+		else {
+			T successor = RSuccessor();
+			_right = _right.remove(successor);
+			_element = successor;
 		}
 		return this;
 	}
 
-	//Finds smallest element in right tree
+	//Finds smallest element in right tree (right side successor)
 	private T RSuccessor() {
 		T element;
 		BST<T> it = this.getRight();
@@ -57,7 +60,7 @@ public class NonEmptyBST<T extends Comparable<T>> implements BST<T> {
 		return element;
 	}
 
-	//Finds largest element in left tree
+	//Finds largest element in left tree (left side successor)
 	private T LSuccessor() {
 		T element;
 		BST<T> it = this.getLeft();

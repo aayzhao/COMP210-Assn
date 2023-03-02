@@ -9,8 +9,13 @@ public class Main { public static void main(String[] args) {
     bst = bst.insert(2);
     bst = bst.insert(5);
     bst = bst.insert(6);
+    bst = bst.insert(21);
+    bst = bst.insert(12);
+    bst = bst.insert(0);
+    bst = bst.insert(7);
 
-    //bst = bst.remove(3);
+    bst = bst.remove(3);
+    bst = bst.remove(21);
     bst.printBreadthFirstTraversal();
 
     System.out.println("Done");
