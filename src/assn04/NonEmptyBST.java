@@ -102,7 +102,7 @@ public class NonEmptyBST<T extends Comparable<T>> implements BST<T> {
 		queueProcessor(queue);
 	}
 
-	public void queueProcessor(Queue<BST<T>> queue){
+	private void queueProcessor(Queue<BST<T>> queue){ //processor method for printBreadthFirstTraversal
 		BST<T> node = queue.poll();
 		if (node == null) return;
 		System.out.print(node.getElement());
