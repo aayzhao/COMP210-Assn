@@ -112,6 +112,7 @@ public class NonEmptyBST<T extends Comparable<T>> implements BST<T> {
 		queueProcessor(queue);
 	}
 
+	@Override
 	public void printInOrderTraversal() {
 		_left.printInOrderTraversal();
 		System.out.print(_element);
