@@ -16,6 +16,14 @@ public class Main { public static void main(String[] args) {
 
     bst = bst.remove(3);
     bst = bst.remove(21);
+
+    bst = bst.insert(3);
+    bst = bst.insert(22);
+    bst = bst.insert(100);
+    bst = bst.insert(14);
+    bst = bst.insert(15);
+    bst = bst.insert(45);
+
     bst.printBreadthFirstTraversal();
 
     System.out.println();
