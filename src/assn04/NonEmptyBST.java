@@ -57,7 +57,7 @@ public class NonEmptyBST<T extends Comparable<T>> implements BST<T> {
 
 	}
 
-	//Finds smallest element in right tree (right side successor)
+	//Finds the smallest element in right tree (right side successor)
 	private T RSuccessor() {
 		T element;
 		BST<T> it = this.getRight();
