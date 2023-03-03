@@ -18,32 +18,23 @@ public class NonEmptyBST<T extends Comparable<T>> implements BST<T> {
 
 	@Override
 	public BST<T> insert(T element) {
-		if (element.compareTo(_element) > 0){
-			_right = _right.insert(element);
-		}
-		else if (element.compareTo(_element) < 0) {
-			_left = _left.insert(element);
-		}
+		if (element.compareTo(_element) > 0) _right = _right.insert(element);
+		else if (element.compareTo(_element) < 0) _left = _left.insert(element);
 		return this;
 	}
 
 	@Override
 	public BST<T> remove(T element) {
-		if(element.compareTo(_element) > 0) { _right = _right.remove(element); }
-		else if (element.compareTo(_element) < 0) { _left = _left.remove(element); }
+		if(element.compareTo(_element) > 0) _right = _right.remove(element);
+		else if (element.compareTo(_element) < 0) _left = _left.remove(element);
 
 		//found BST holding element to be deleted
 		else {
-			if (_left.isEmpty() && _right.isEmpty()) {
-				return new EmptyBST<>();
-			} //node is leaf
+			if (_left.isEmpty() && _right.isEmpty()) return new EmptyBST<>(); //node is leaf
 
 			//node has one child
-			else if (_left.isEmpty()) {
-				return _right;
-			} else if (_right.isEmpty()) {
-				return _left;
-			}
+			else if (_left.isEmpty()) return _right;
+			else if (_right.isEmpty()) return _left;
 
 			//node has two children
 			else {
@@ -59,24 +50,20 @@ public class NonEmptyBST<T extends Comparable<T>> implements BST<T> {
 
 	//Finds the smallest element in right tree (right side successor)
 	private T RSuccessor() {
-		T element;
 		BST<T> it = this.getRight();
 		while (!it.getLeft().isEmpty()){
 			it = it.getLeft();
 		}
-		element = it.getElement();
-		return element;
+		return it.getElement();
 	}
 
 	//Finds largest element in left tree (left side successor)
 	private T LSuccessor() {
-		T element;
 		BST<T> it = this.getLeft();
 		while (!it.getRight().isEmpty()){
 			it = it.getRight();
 		}
-		element = it.getElement();
-		return element;
+		return it.getElement();
 	}
 
 	@Override
@@ -107,8 +94,8 @@ public class NonEmptyBST<T extends Comparable<T>> implements BST<T> {
 		if (node == null) return;
 		System.out.print(node.getElement());
 		System.out.print(" ");
-		if(!node.getLeft().isEmpty()) { queue.add(node.getLeft()); }
-		if(!node.getRight().isEmpty()) { queue.add(node.getRight()); }
+		if(!node.getLeft().isEmpty()) queue.add(node.getLeft());
+		if(!node.getRight().isEmpty()) queue.add(node.getRight());
 		queueProcessor(queue);
 	}
 
