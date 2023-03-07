@@ -24,5 +24,9 @@ LinkedListPractice - practice with linked lists main method workspace
 
 BinarySearch - practice with binary searches main method workspace
 
+Ass03Test - testing things for assignment 03
+
+Main - main method for testing anything
+
 ## Zips and Other Stuff
 Where zip files and other assignment submission materials are.
