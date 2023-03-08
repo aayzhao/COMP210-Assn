@@ -2,7 +2,6 @@ package selfPractice;
 import assn04.BST;
 import assn04.NonEmptyBST;
 import assn04.EmptyBST;
-
 import static java.lang.Integer.valueOf;
 
 /**
