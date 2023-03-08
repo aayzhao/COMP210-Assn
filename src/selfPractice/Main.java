@@ -14,15 +14,8 @@ import static java.lang.Integer.valueOf;
 public class Main {
     static int _num;
     public static void main(String[] args){
-        Main y = new Main(5);
-        System.out.println(y.getNum());
-
-        for(int i = 0; i < 5; i++){
-            System.out.println(i);
-        }
-        Integer x = 10;
-        Integer z = 10;
-        System.out.println(x == z);
+        BST<Integer> bst = new NonEmptyBST<>(3);
+        bst = bst.remove(3);
 
     }
 
